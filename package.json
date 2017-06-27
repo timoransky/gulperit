@@ -1,7 +1,10 @@
 {
   "name": "gulperit",
-  "version": "1.0.1",
-  "files" : [ "index.html","assets" ],
+  "version": "1.0.2",
+  "files": [
+    "index.html",
+    "assets"
+  ],
   "description": "A Gulp file and project generator.",
   "main": "gulpfile.js",
   "scripts": {
