@@ -6,7 +6,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin'),
     cache = require('gulp-cache');
-var minifycss = require('gulp-minify-css');
+var minifycss = require('gulp-clean-css');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 
@@ -23,13 +23,13 @@ gulp.task('bs-reload', function () {
 });
 
 gulp.task('images', function(){
-  gulp.src('assets/_src/img/**/*')
+  return gulp.src('assets/_src/img/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('assets/img/'));
 });
 
 gulp.task('styles', function(){
-  gulp.src(['assets/_src/sass/**/*.scss'])
+  return gulp.src(['assets/_src/sass/**/*.scss'])
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
@@ -45,7 +45,7 @@ gulp.task('styles', function(){
 });
 
 gulp.task('scripts', function(){
-  gulp.src('assets/_src/js/**/*.js')
+  return gulp.src('assets/_src/js/**/*.js')
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
