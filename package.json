@@ -1,6 +1,7 @@
 {
   "name": "gulperit",
   "version": "1.0.1",
+  "files" : [ "index.html","assets" ],
   "description": "A Gulp file and project generator.",
   "main": "gulpfile.js",
   "scripts": {
@@ -20,10 +21,5 @@
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
     "gulp": "latest"
-  },
-  "files": {
-    "index": "index.html",
-    "gulpfile": "gulpfile.js",
-    "assets": "assets"
   }
 }
