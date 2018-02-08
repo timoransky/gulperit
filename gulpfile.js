@@ -8,8 +8,9 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     minifycss = require('gulp-clean-css'),
     sass = require('gulp-sass'),
-    browserSync = require('browser-sync')
-    wait = require('gulp-wait2');
+    browserSync = require('browser-sync'),
+    wait = require('gulp-wait2'),
+    babel = require('gulp-babel');
 
 gulp.task('browser-sync', function() {
     browserSync({
@@ -50,6 +51,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
     return gulp.src('assets/_src/js/**/*.js')
         .pipe(wait(1000))
+        .pipe(babel())
         .pipe(plumber({
             errorHandler: function(error) {
                 console.log(error.message);
